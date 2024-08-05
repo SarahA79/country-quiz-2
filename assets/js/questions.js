@@ -2,22 +2,18 @@
 let imageObject;
 let imagePlaceholder;
 let imageData;
+let questNum = "0";
 function loadQuiz(){
     document.getElementById("play").addEventListener("click", function() {
-       
-            const imageObject = countriesArray[0];
-            const imagePlaceholder = document.getElementById("image");
-            const imageData =document.getElementById('imageData');
+    const country = getCountry(questNum);
 
-            imagePlaceholder.src = imageObject[currentIndex].url;
-            imageData.innerHTML= '<img src=imagePlaceholder alt = "flag image"/>'
         }
-
-function getCountry(){
-
+    }
+function getCountry(num){
+imageObject =countriesArray[num];
 }
 
-function getFlagImage(){
+function getFlagImage(countryUrl){
 
 }
 
