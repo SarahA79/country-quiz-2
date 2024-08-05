@@ -73,11 +73,15 @@ h3{
 }
 
 .flag-pic{
-    width: 60%;
+    width: 350px;
     height: 20rem;
     border: #444;
     box-shadow: 0.5rem 0 0.5rem 0.5rem #116688;
     margin: 5rem;
+    display: flex;
+    overflow: hidden;
+    text-wrap: nowrap;
+    justify-content: center;
 }
 
 .hidden{
