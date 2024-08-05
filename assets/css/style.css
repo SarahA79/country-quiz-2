@@ -77,7 +77,8 @@ h3{
     width: 350px;
     height: 20rem;
     border: #444;
-    box-shadow: 0.5rem 0 0.5rem 0.5rem #116688;
+    box-shadow: 1.5rem 0.5rem 1.5rem 0.5rem  #116688;
+    background-color: #88ccee;
     margin: 5rem;
     display: flex;
     overflow: hidden;
