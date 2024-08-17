@@ -11,7 +11,7 @@ const countriesArray = [
     {
         num:2,
         country: "Germany",
-        url: "assets/images/germany-flag.jpg",
+        url: "assets/images/germany-flag.png",
         population: "83.2 million",
         language: "German",
         capital: "Berlin",
@@ -20,7 +20,7 @@ const countriesArray = [
     {
         num:3,
         country: "Japan",
-        url:"assets/images/japan-flag.jpg",
+        url:"assets/images/japan-flag.png",
         population: "126.3 million",
         language: "Japanese",
         capital: "Tokyo",
@@ -29,7 +29,7 @@ const countriesArray = [
     {
         num:4,
         country: "Brazil",
-        url: "assets/images/brazil-flag.jpg",
+        url: "assets/images/brazil-flag.png",
         population: "212.6 million",
         language: "Portuguese",
         capital: "Brasília",
@@ -38,7 +38,7 @@ const countriesArray = [
     {
         num:5,
         country: "Canada",
-        url: "assets/images/canada-flag.jpg",
+        url: "assets/images/canada-flag.png",
         population: "37.6 million",
         language: "English and French",
         capital: "Ottawa",
@@ -47,7 +47,7 @@ const countriesArray = [
     {
         num:6,
         country: "India",
-        url: "assets/images/india-flag.jpg",
+        url: "assets/images/india-flag.png",
         population: "1.366 billion",
         language: "Hindi and English",
         capital: "New Delhi",
