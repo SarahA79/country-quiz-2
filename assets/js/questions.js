@@ -16,6 +16,8 @@ function loadQuiz() {
             country = getCountry(questNum);
             displayImage(country.url);
             displayOptions(country.options);
+            countryName = country.country
+            questNum++;
         } else {
             alert(`Final Score: ${score} `);
         }
@@ -41,13 +43,16 @@ function displayImage(url) {
     imageDiv.appendChild(img);
 }
 
-// Function to display options
 function displayOptions(options) {
     const choiceElements = document.querySelectorAll('.choicetext');
-    options.forEach((option, index) => {
-        choiceElements[index].textContent = option;
-        choiceElements[index].addEventListener("click", function () {
-            selectAnswer(option)
+
+    // Clear existing event listeners and text content
+    choiceElements.forEach((choiceElement, index) => {
+        const newElement = choiceElement.cloneNode(true); 
+        choiceElement.parentNode.replaceChild(newElement, choiceElement); 
+        newElement.textContent = options[index]; 
+        newElement.addEventListener("click", function () {
+            selectAnswer(options[index], countryName);
         });
     });
 }
@@ -62,24 +67,30 @@ function getOptions() {
 
 function selectAnswer(option, countryName) {
     selectedAnswer = option;
+
     checkAnswer(option, countryName)
     answered = true;
 }
 
+
 function checkAnswer(option, countryName) {
-    if (option === countryName) {
+    console.log(`Option selected: ${option}, answer: ${countryName}`);
+    if (option.trim().toLowerCase() === countryName.trim().toLowerCase()) {
         score += 10;
-        console.log(option, countryName)
-        alert(`Correct, Well Done! \n Your Score Is: ${score};`)
-        selectedAnswer = null;
+        alert(`Correct, Well Done! \n Your Score Is: ${score};`);
     } else {
-        alert("Sorry, thats the wrong answer!");
-        selectedAnswer = null;
+        alert("Sorry, that's the wrong answer!");
     }
 
-    questNum++;
+    // Clear the selection and reset variables
+    selectedAnswer = null;
+  //  answered = false;
+
+    // Load the next question
     nextQuestion();
 }
+
+
 
 function displayInfo() {
 
@@ -91,7 +102,7 @@ function nextQuestion() {
         country = getCountry(questNum);
         displayImage(country.url);
         displayOptions(country.options);
-        answered = false;
+       answered = false;
     } else {
         if (score === 0) {
             alert("Sorry you didnt get any correct this time!")
