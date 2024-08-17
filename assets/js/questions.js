@@ -1,21 +1,29 @@
-// questions.js
-// Initialize variables
-let imageObject;
+// questions.js// Initialize variables
 let questNum = 0;
 let selectedAnswer = null;
 let score = 0;
-let countryName = "";
-let option = "";
-let answered = false;
+let country = {};
 
 // Function to load the quiz
 function loadQuiz() {
     const playButton = document.getElementById("play");
     playButton.addEventListener("click", function () {
-        questNum = 0;  // Reset question number at the start
-        score = 0;     // Reset score at the start
+        resetQuiz();
         playButton.textContent = 'Play Again'; // Change button text to "Play Again"
         nextQuestion();
+    });
+}
+
+// Function to reset the quiz
+function resetQuiz() {
+    questNum = 0;  // Reset question number at the start
+    score = 0;     // Reset score at the start
+    selectedAnswer = null;
+    country = {};
+    document.getElementById("image").innerHTML = ''; // Clear image container
+    const choiceElements = document.querySelectorAll('.choicetext');
+    choiceElements.forEach(choiceElement => {
+        choiceElement.textContent = ''; // Clear choices text content
     });
 }
 
@@ -80,7 +88,7 @@ function checkAnswer(option, countryName) {
 
     if (normalizedOption === normalizedCountry) {
         score += 10;
-        alert(`Correct, Well Done! \n Your Score Is: ${score}`);
+        alert(`Correct, Well Done! \nYour Score Is: ${score} \nThe population of ${country.country}: ${country.population} \nThe Language is: ${country.language}\nThe Capital City is: ${country.capital}`);
     } else {
         alert("Sorry, that's the wrong answer!");
     }
@@ -101,12 +109,29 @@ function nextQuestion() {
     }
 }
 
+const jsConfetti = new JSConfetti();
+
+// Trigger the alert and confetti
+function showAlertAndConfetti() {
+  jsConfetti.addConfetti({
+    emojis: ['⭐', '🌟', '💫', '✩', '✮', '🎸'],
+    emojiSize: 50,
+    confettiNumber: 500
+  });
+}
+
 // Show final score at the end of the quiz
 function showFinalScore() {
     if (score === 0) {
         alert("Sorry, you didn't get any correct this time!");
     } else {
         alert(`Well Done! Your Final Score is ${score}`);
+        showAlertAndConfetti();
+    }
+
+    if (confirm("Game over. Do you want to play again?")) {
+        resetQuiz();
+        nextQuestion();
     }
 }
 

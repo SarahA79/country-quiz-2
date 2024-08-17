@@ -19,7 +19,7 @@ h1,h2,h3,h4{
 h1{
     font-size: 5.5rem;
     color: #116688;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
 }
 
 h1 > span{
@@ -29,12 +29,12 @@ h1 > span{
 
 h2{
     font-size: 4rem;
-    margin-bottom: 3.8rem;
+    margin-bottom: 2rem;
     font-weight: 500;
 }
 
 h3{
-    font-size: 2.8rem;
+    font-size: 2rem;
     font-weight: 500;
 }
 
@@ -55,6 +55,12 @@ h3{
     align-items: center;
 }
 
+#game{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem;
+}
 .flex-column{
     display: flex;
     flex-direction: column;
@@ -89,6 +95,7 @@ h3{
 .hidden{
     display: none;
 }
+
 .choices-container{
     display: flex;
     margin-bottom: 0.5rem;
