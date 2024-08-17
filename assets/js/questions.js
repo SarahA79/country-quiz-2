@@ -1,4 +1,6 @@
-// questions.js// Initialize variables
+// questions.js
+
+// Initialize variables
 let questNum = 0;
 let selectedAnswer = null;
 let score = 0;
@@ -88,7 +90,7 @@ function checkAnswer(option, countryName) {
 
     if (normalizedOption === normalizedCountry) {
         score += 10;
-        alert(`Correct, Well Done! \nYour Score Is: ${score} \nThe population of ${country.country}: ${country.population} \nThe Language is: ${country.language}\nThe Capital City is: ${country.capital}`);
+        alert(`Correct, Well Done! \nYour Score Is: ${score} \nThe population of ${country.country} is ${country.population} the language spoken there is: ${country.language} and the Capital City is ${country.capital}`);
     } else {
         alert("Sorry, that's the wrong answer!");
     }
@@ -114,9 +116,9 @@ const jsConfetti = new JSConfetti();
 // Trigger the alert and confetti
 function showAlertAndConfetti() {
   jsConfetti.addConfetti({
-    emojis: ['⭐', '🌟', '💫', '✩', '✮', '🎸'],
-    emojiSize: 50,
-    confettiNumber: 500
+    emojis: [':fr:', ':de:', ':jp:', ':flag-br:', ':flag-ca:', ':flag-in:'],
+    emojiSize: 100,
+    confettiNumber: 1000
   });
 }
 
