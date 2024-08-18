@@ -137,6 +137,7 @@ The site is deployed on GitHub Pages. You can view the live site at [https://sar
 
 ### Validator Testing
 - **HTML**: No errors were found when passing through the official [W3C validator](https://validator.w3.org/).
+![HTML Validation](assets/images/htmlValidation.jpeg)
 - **CSS**: No errors were found when passing through the official [Jigsaw validator](https://jigsaw.w3.org/css-validator/).
 ![CSS Validator Screenshot](assets/images/cssValidator.jpeg)
 
