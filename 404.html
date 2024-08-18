@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found- Country Flag Quiz</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p>Oops! The page you're looking for doesn't exist.</p>
+        <p>Maybe try going back to the <a href="/">homepage</a> </p>
+        <button class="confetti-button" onclick="triggerConfetti()">Celebrate Anyway!</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.min.js"></script>
+    <script>
+        const jsConfetti = new JSConfetti();
+
+        function triggerConfetti() {
+            jsConfetti.addConfetti({
+                emojis: ['🎉', '🎊', '✨', '🎈', '💥', '🥳'],
+                confettiNumber: 500,
+            });
+        }
+    </script>
+</body>
+</html>
