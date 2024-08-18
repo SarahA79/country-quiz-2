@@ -141,6 +141,9 @@ The site is deployed on GitHub Pages. You can view the live site at [https://sar
 - **CSS**: No errors were found when passing through the official [Jigsaw validator](https://jigsaw.w3.org/css-validator/).
 ![CSS Validator Screenshot](assets/images/cssValidator.jpeg)
 
+-**Lighthouse test**: 
+![Lighthouse test](assets/images/lighthouseSS.PNG)
+
 ### Manual Testing
 - **Quiz Functionality**: Verified that questions load correctly, answers are processed, and feedback with Info about the country is provided when user selects correct answer.
 - **Confetti Animation**: Tested the confetti animation to ensure it triggers correctly on quiz completion.- Not working quite as intended as it shows only after selecting run quiz again at the final prompt.
