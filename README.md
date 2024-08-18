@@ -2,7 +2,7 @@
 
 This project is a web-based quiz created to provide users with a fun and interactive way to test their knowledge on the flags of the world. The quiz was inspired by a7 year old whos inquisitive mind has fallen in love with flags so the design was to be as user-friendly, and engaging as possible with features such as animated confetti upon successful completion.
 
-![Quiz Screenshot](assets/images/quiz-screenshot.png)
+![Quiz Screenshot](assets/images/screensPreview.jpeg)
 
 [Link to live site](https://SarahA79.github.io/country-quiz-2)
 
@@ -90,14 +90,15 @@ Images are used to enhance the user experience by providing visual context for t
 ## Features
 
 ### General Features on Each Page
-- **Navigation Bar**: Allows users to easily navigate through different sections of the quiz.
-- **Responsive Design**: Ensures the site is fully functional on mobile, tablet, and desktop devices.
+- **Easily understandably options**: Ensures the options are easily selected with hover background to highlight where the pointer is.
 - **Interactive Feedback**: Users receive instant feedback on their answers, including confetti animations for correct answers or quiz completion.
 
 ### Future Implementations
 - **Additional Quizzes**: Expanding the site to include multiple different levels of difficulty.
 - **Leaderboard**: A feature allowing users to see how they rank compared to others.
 - **Social Sharing**: Options to share quiz results on social media platforms.
+- **implement full accessibility**: Currently mobile device rendering is off centered and needs adjusting and added functionality for screeen readers and alternative image text 
+-**Fix Confetti**: loading time and placement to be adjusted in future fixes.
 
 ### Accessibility
 The site is designed with accessibility in mind, using semantic HTML, descriptive alt attributes for images, and ensuring sufficient color contrast. The site has been tested with various accessibility tools to ensure a positive experience for all users.
