@@ -17,7 +17,7 @@ const countriesArray = [
         capital: "Berlin",
         options: ["Italy", "Netherlands", "Germany", "Belgium"]
     },
-    {
+   {
         num:3,
         country: "Japan",
         url:"assets/images/japan-flag.png",

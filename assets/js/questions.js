@@ -1,5 +1,3 @@
-// questions.js
-
 // Initialize variables
 let questNum = 0;
 let selectedAnswer = null;
@@ -18,8 +16,8 @@ function loadQuiz() {
 
 // Function to reset the quiz
 function resetQuiz() {
-    questNum = 0;  // Reset question number at the start
-    score = 0;     // Reset score at the start
+    questNum = 0; // Reset question number at the start
+    score = 0; // Reset score at the start
     selectedAnswer = null;
     country = {};
     document.getElementById("image").innerHTML = ''; // Clear image container
@@ -47,7 +45,8 @@ function displayImage(url) {
 
 // Function to shuffle array (Fisher-Yates algorithm)
 function shuffle(array) {
-    let currentIndex = array.length, randomIndex;
+    let currentIndex = array.length,
+        randomIndex;
 
     // While there remain elements to shuffle.
     while (currentIndex !== 0) {
@@ -57,7 +56,8 @@ function shuffle(array) {
 
         // And swap it with the current element.
         [array[currentIndex], array[randomIndex]] = [
-            array[randomIndex], array[currentIndex]];
+            array[randomIndex], array[currentIndex]
+        ];
     }
 
     return array;
@@ -67,7 +67,7 @@ function shuffle(array) {
 function displayOptions(options) {
     const choiceElements = document.querySelectorAll('.choicetext');
     const shuffledOptions = shuffle(options.slice()); // Shuffle a copy of the options array
-    
+
     // Clear existing event listeners and text content
     choiceElements.forEach((choiceElement, index) => {
         const newElement = choiceElement.cloneNode(true);
@@ -101,25 +101,41 @@ function checkAnswer(option, countryName) {
 
 // Loads the next question when each question has been answered or displays the final quiz score if all questions were answered.
 function nextQuestion() {
-    if (questNum < countriesArray.length) {
+    if (questNum < countriesArray.length - 4) {
         country = getCountry(questNum);
         displayImage(country.url);
         displayOptions(country.options);
         questNum++; // Increment questNum here
     } else {
+        showAlertAndConfetti();
         showFinalScore();
     }
 }
 
 const jsConfetti = new JSConfetti();
 
-// Trigger the alert and confetti
+// Trigger the alert and confetti suggested code by Vernell Clark
 function showAlertAndConfetti() {
-  jsConfetti.addConfetti({
-    emojis: [':fr:', ':de:', ':jp:', ':flag-br:', ':flag-ca:', ':flag-in:'],
-    emojiSize: 100,
-    confettiNumber: 1000
-  });
+    // Trigger confetti immediately
+    jsConfetti.addConfetti({
+        emojis: ['🇫🇷', '🇩🇪', '🎉', '🇯🇵', '🎊', '🇧🇷', '🎉', '🇨🇦', '🇮🇳'],
+        emojiSize: 100,
+        confettiNumber: 1800
+    });
+
+    // Set interval to trigger confetti repeatedly
+    const intervalId = setInterval(() => {
+        jsConfetti.addConfetti({
+            emojis: ['🇫🇷', '🇩🇪', '🎉', '🇯🇵', '🎊', '🇧🇷', '🎉', '🇨🇦', '🇮🇳'],
+            emojiSize: 100,
+            confettiNumber: 1800
+        });
+    }, 5); // This will trigger confetti every 5ms
+
+    // Stop the confetti after 5 seconds
+    setTimeout(() => {
+        clearInterval(intervalId);
+    }, 5000); // 5000ms = 5 seconds
 }
 
 // Show final score at the end of the quiz
